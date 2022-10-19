@@ -1,4 +1,4 @@
-import { Search, ShoppingCart, ChevronDown, User } from 'lucide-react'
+import { Search, ShoppingCart, ChevronDown, User } from '@components/icons'
 
 const Navbar = () => {
   return (
