@@ -1,15 +1,15 @@
-import { AppProps } from "next/app"
+import { AppProps } from 'next/app'
 
-import "@styles/main.css"
+import '@styles/main.css'
 
-import { Layout } from "@components/common"
+import { Layout } from '@components/common'
 
 function MyApp({ Component, pageProps }: AppProps) {
-	return (
-		<Layout>
-			<Component {...pageProps} />
-		</Layout>
-	)
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
 export default MyApp
