@@ -1,14 +1,15 @@
 import React from 'react'
 
-import { Navbar } from '@components/common'
+import { Header, Footer } from '@components/common'
 
 const Layout: React.FC<{
   children: React.ReactNode
 }> = ({ children }) => {
   return (
     <>
-      <Navbar />
+      <Header />
       <main>{children}</main>
+      {/* <Footer /> */}
     </>
   )
 }
