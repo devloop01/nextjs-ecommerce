@@ -1,12 +1,17 @@
-import React from 'react'
+import { FC } from 'react'
+import cn from 'clsx'
 
-import { Search } from '@components/icons'
+import s from './SearchInput.module.css'
 
-type Props = {}
+import { SearchIcon } from '@components/icons'
 
-const SearchInput: React.FC = (props: Props) => {
+type Props = {
+  className?: string
+}
+
+const SearchInput: FC<Props> = ({ className }) => {
   return (
-    <div>
+    <div className={cn(s.root, className)}>
       <label
         htmlFor="default-search"
         className="sr-only mb-2 text-sm font-medium text-gray-900"
@@ -15,7 +20,7 @@ const SearchInput: React.FC = (props: Props) => {
       </label>
       <div className="relative flex">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-          <Search className="h-5 w-5 text-gray-600" />
+          <SearchIcon className="h-5 w-5 text-gray-600" />
         </div>
         <input
           type="search"

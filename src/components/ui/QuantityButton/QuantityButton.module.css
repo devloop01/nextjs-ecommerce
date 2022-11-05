@@ -1,0 +1,19 @@
+.root {
+  @apply flex items-center justify-center gap-8 rounded bg-blue-600 px-6 py-2 uppercase text-white shadow-md transition duration-150 ease-in-out;
+}
+
+.root:focus {
+  @apply bg-blue-700 shadow-lg outline-none ring-0;
+}
+
+.root:active {
+  @apply bg-blue-800 shadow-lg;
+}
+
+.root:hover {
+  @apply bg-blue-700 shadow-lg;
+}
+
+.quantityText {
+  @apply font-semibold tabular-nums;
+}
