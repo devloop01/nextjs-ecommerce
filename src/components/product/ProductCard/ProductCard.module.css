@@ -1,0 +1,39 @@
+.root {
+  @apply block w-48 rounded-lg bg-white p-2 ring-2 ring-black ring-opacity-10 transition-shadow;
+}
+
+.root:hover {
+  @apply ring-blue-500 ring-opacity-75;
+}
+
+.imageContainer {
+  @apply h-40 w-full;
+}
+
+.imageContainer .productImage {
+  @apply h-full w-full object-cover;
+}
+
+.detailsContainer {
+  @apply mt-2;
+}
+
+.detailsContainer .details {
+  @apply flex flex-col gap-2;
+}
+
+.details .name {
+  @apply text-xl font-medium text-black;
+}
+
+.details .units {
+  @apply text-sm font-normal text-gray-400;
+}
+
+.details .price {
+  @apply text-base font-normal text-black;
+}
+
+.actions {
+  @apply mt-2 flex w-full items-center;
+}
