@@ -1,4 +1,4 @@
-const Search = ({ ...props }) => {
+const Plus = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,10 +12,10 @@ const Search = ({ ...props }) => {
       viewBox="0 0 24 24"
       {...props}
     >
-      <circle cx="11" cy="11" r="8"></circle>
-      <path d="M21 21L16.65 16.65"></path>
+      <path d="M12 5L12 19"></path>
+      <path d="M5 12L19 12"></path>
     </svg>
   )
 }
 
-export default Search
+export default Plus

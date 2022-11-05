@@ -1,9 +1,4 @@
-import React from 'react'
-
-type Props = {
-  className?: string
-}
-const User: React.FC<Props> = ({ ...props }) => {
+const User = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
