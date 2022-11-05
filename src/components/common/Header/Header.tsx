@@ -1,26 +1,28 @@
-import React from 'react'
+import { FC } from 'react'
+import Link from 'next/link'
 
-import { ShoppingCart, User, MapPin } from '@components/icons'
+import { ShoppingCartIcon, UserIcon, MapPinIcon } from '@components/icons'
 import { SearchInput } from '@components/ui'
 
-const Navbar: React.FC = () => {
+type Props = {}
+
+const Header: FC<Props> = ({}) => {
   return (
     <header className="shadow-md">
       <div className="mx-auto flex min-h-[4rem] items-center justify-between px-4 md:container md:min-h-[6rem] md:justify-start">
         <div className="flex gap-8">
-          <a href="#" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <span className="self-center whitespace-nowrap text-3xl font-bold">
               Veggie
             </span>
-          </a>
-
+          </Link>
           <div className="hidden cursor-pointer lg:block">
             <span className="ml-5 block text-sm font-semibold">
               Deliver to Sikriti
             </span>
-            <div className="flex">
-              <MapPin className="k h-5 w-5" />
-              <span className="text-base">Mathabhanga, 736146</span>
+            <div className="flex items-center">
+              <MapPinIcon className="k h-5 w-5" />
+              <span className="text-lg font-medium">Mathabhanga, 736146</span>
             </div>
           </div>
         </div>
@@ -31,10 +33,10 @@ const Navbar: React.FC = () => {
 
         <div className="flex gap-4">
           <button type="button" className="p-2">
-            <ShoppingCart className="h-5 w-5" />
+            <ShoppingCartIcon className="h-5 w-5" />
           </button>
           <button type="button" className="flex items-center gap-2 p-2">
-            <User className="h-5 w-5" />
+            <UserIcon className="h-5 w-5" />
             <span className="hidden text-sm font-semibold">Log In</span>
           </button>
         </div>
@@ -45,7 +47,7 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="flex cursor-pointer items-center gap-1 border-t px-2 py-2.5 lg:hidden">
-        <MapPin className="k h-5 w-5" />
+        <MapPinIcon className="k h-5 w-5" />
         <span className="block text-sm font-semibold">Deliver to Sikriti</span>
         <span> - </span>
         <span className="text-sm font-semibold">Mathabhanga, 736146</span>
@@ -54,4 +56,4 @@ const Navbar: React.FC = () => {
   )
 }
 
-export default Navbar
+export default Header
