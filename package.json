@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^1.2.1",
     "next": "13.0.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-merge-refs": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "18.11.9",
