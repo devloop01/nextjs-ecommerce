@@ -8,7 +8,7 @@ type Props = {}
 
 const Header: FC<Props> = ({}) => {
   return (
-    <header className="shadow-md">
+    <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="mx-auto flex min-h-[4rem] items-center justify-between px-4 md:container md:min-h-[6rem] md:justify-start">
         <div className="flex gap-8">
           <Link href="/" className="flex items-center">
@@ -17,12 +17,12 @@ const Header: FC<Props> = ({}) => {
             </span>
           </Link>
           <div className="hidden cursor-pointer lg:block">
-            <span className="ml-5 block text-sm font-semibold">
+            <span className="ml-5 block text-sm font-medium">
               Deliver to Sikriti
             </span>
             <div className="flex items-center">
-              <MapPinIcon className="k h-5 w-5" />
-              <span className="text-lg font-medium">Mathabhanga, 736146</span>
+              <MapPinIcon className="mb-1 h-4 w-4" />
+              <span className="text-base font-normal">Mathabhanga, 736146</span>
             </div>
           </div>
         </div>

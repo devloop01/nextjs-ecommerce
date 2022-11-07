@@ -1,5 +1,5 @@
 .root {
-  @apply flex items-center justify-center gap-8 rounded bg-blue-600 px-6 py-2 uppercase text-white shadow-md transition duration-150 ease-in-out;
+  @apply flex items-center justify-around gap-8 rounded bg-blue-600 px-6 py-2 font-medium uppercase text-white shadow-md transition duration-150 ease-in-out;
 }
 
 .root:focus {
@@ -15,5 +15,5 @@
 }
 
 .quantityText {
-  @apply font-semibold tabular-nums;
+  @apply w-5 text-center tabular-nums;
 }
