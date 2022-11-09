@@ -1,30 +1,70 @@
 [
   {
+    "id": "1",
     "name": "Apple",
+    "description": "",
+    "slug": "/apple",
+    "path": "string",
+    "price": {
+      "value": 20
+    },
+    "vendor": "",
     "title": "this is an apple",
-    "image": "/product-images/Red_Apple.jpg",
-    "price": 35,
-    "discount": 10
+    "images": [
+      {
+        "url": "/product-images/Red_Apple.jpg"
+      }
+    ]
   },
   {
+    "id": "2",
     "name": "Banana",
+    "description": "",
+    "slug": "/banana",
+    "path": "string",
+    "price": {
+      "value": 20
+    },
+    "vendor": "",
     "title": "this is an apple",
-    "image": "/product-images/320px-Bananas_white_background_DS.jpg",
-    "price": 12,
-    "discount": 10
+    "images": [
+      {
+        "url": "/product-images/320px-Bananas_white_background_DS.jpg"
+      }
+    ]
   },
   {
+    "id": "3",
     "name": "Grapes",
+    "description": "",
+    "slug": "/grapes",
+    "path": "string",
+    "price": {
+      "value": 20
+    },
+    "vendor": "",
     "title": "this is an apple",
-    "image": "/product-images/320px-Table_grapes_on_white.jpg",
-    "price": 45,
-    "discount": 10
+    "images": [
+      {
+        "url": "/product-images/320px-Table_grapes_on_white.jpg"
+      }
+    ]
   },
   {
-    "name": "Pineapple",
+    "id": "4",
+    "name": "PineApple",
+    "description": "",
+    "slug": "/pineapple",
+    "path": "string",
+    "price": {
+      "value": 20
+    },
+    "vendor": "",
     "title": "this is an apple",
-    "image": "/product-images/286px-Pineapple_and_cross_section.jpg",
-    "price": 200,
-    "discount": 10
+    "images": [
+      {
+        "url": "/product-images/286px-Pineapple_and_cross_section.jpg"
+      }
+    ]
   }
 ]
