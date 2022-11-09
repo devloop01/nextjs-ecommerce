@@ -1,3 +1,31 @@
 .root {
-  @apply block min-w-full max-w-lg;
+  @apply relative flex min-w-full max-w-lg;
+}
+
+.label {
+  @apply sr-only mb-2 text-sm font-medium text-gray-900;
+}
+
+.inputField {
+  @apply w-full rounded-l-lg border border-gray-300 bg-gray-50 py-3 pl-10 text-sm;
+}
+
+.inputField:focus {
+  @apply border-green-500 outline-none;
+}
+
+.btn {
+  @apply rounded-r-lg bg-green-500 px-3 text-white transition-colors;
+}
+
+.btn:active {
+  @apply bg-green-600;
+}
+
+.btn:hover {
+  @apply bg-green-600;
+}
+
+.icon {
+  @apply pointer-events-none absolute inset-y-0 top-3.5 left-0 ml-3 flex h-4 w-4 items-center text-gray-500;
 }

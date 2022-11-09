@@ -1,0 +1,7 @@
+.root {
+  @apply sticky top-0 z-50 bg-white shadow-md;
+}
+
+.rootContainer {
+  @apply mx-auto flex min-h-[4rem] items-center justify-between px-4 md:container md:min-h-[6rem] md:justify-start;
+}

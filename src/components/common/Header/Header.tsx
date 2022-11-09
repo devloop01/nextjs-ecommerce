@@ -1,23 +1,26 @@
 import { FC } from 'react'
 import Link from 'next/link'
 
+import s from './Header.module.css'
+
 import { ShoppingCartIcon, UserIcon, MapPinIcon } from '@components/icons'
 import { SearchInput } from '@components/ui'
+import { UserNav } from '@components/common'
 
 type Props = {}
 
 const Header: FC<Props> = ({}) => {
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="mx-auto flex min-h-[4rem] items-center justify-between px-4 md:container md:min-h-[6rem] md:justify-start">
+    <header className={s.root}>
+      <div className={s.rootContainer}>
         <div className="flex gap-8">
           <Link href="/" className="flex items-center">
-            <span className="self-center whitespace-nowrap text-3xl font-bold">
+            <span className="self-center whitespace-nowrap text-3xl font-bold text-green-400">
               Veggie
             </span>
           </Link>
           <div className="hidden cursor-pointer lg:block">
-            <span className="ml-5 block text-sm font-medium">
+            <span className="ml-4 block text-sm font-semibold">
               Deliver to Sikriti
             </span>
             <div className="flex items-center">
@@ -31,15 +34,7 @@ const Header: FC<Props> = ({}) => {
           <SearchInput />
         </div>
 
-        <div className="flex gap-4">
-          <button type="button" className="p-2">
-            <ShoppingCartIcon className="h-5 w-5" />
-          </button>
-          <button type="button" className="flex items-center gap-2 p-2">
-            <UserIcon className="h-5 w-5" />
-            <span className="hidden text-sm font-semibold">Log In</span>
-          </button>
-        </div>
+        <UserNav />
       </div>
 
       <div className="block grow px-4 pb-4 md:hidden">

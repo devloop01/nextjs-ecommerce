@@ -1,9 +1,13 @@
 .root {
-  @apply block w-48 rounded-lg bg-white p-2 ring-2 ring-black ring-opacity-10 transition-shadow;
+  @apply relative block w-48 rounded-lg bg-white ring-2 ring-black ring-opacity-10 transition-shadow;
 }
 
 .root:hover {
-  @apply ring-blue-500 ring-opacity-75;
+  @apply ring-green-500 ring-opacity-75;
+}
+
+.link {
+  @apply flex flex-col p-2 pb-14;
 }
 
 .imageContainer {
@@ -34,6 +38,10 @@
   @apply text-base font-normal text-black;
 }
 
+.actionsContainer {
+  @apply absolute left-0 bottom-2 w-full px-2;
+}
+
 .actions {
-  @apply mt-2 flex w-full items-center;
+  @apply flex items-center;
 }

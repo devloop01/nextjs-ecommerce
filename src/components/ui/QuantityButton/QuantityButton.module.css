@@ -1,17 +1,13 @@
 .root {
-  @apply flex items-center justify-around gap-8 rounded bg-blue-600 px-6 py-2 font-medium uppercase text-white shadow-md transition duration-150 ease-in-out;
-}
-
-.root:focus {
-  @apply bg-blue-700 shadow-lg outline-none ring-0;
+  @apply flex items-center justify-around gap-8 rounded bg-green-500 px-6 py-2 font-medium uppercase text-white transition duration-150 ease-in-out;
 }
 
 .root:active {
-  @apply bg-blue-800 shadow-lg;
+  @apply bg-green-600;
 }
 
 .root:hover {
-  @apply bg-blue-700 shadow-lg;
+  @apply bg-green-600;
 }
 
 .quantityText {
