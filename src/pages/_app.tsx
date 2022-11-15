@@ -1,10 +1,12 @@
-import { AppProps } from 'next/app'
+import type { AppType } from 'next/app'
 
-import '@styles/main.css'
+import { trpc } from '~/utils/trpc'
 
-import { Layout } from '@components/common'
+import { Layout } from '~/components/common'
 
-function MyApp({ Component, pageProps }: AppProps) {
+import '~/styles/main.css'
+
+const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <Layout>
       <Component {...pageProps} />
@@ -12,4 +14,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default trpc.withTRPC(MyApp)
