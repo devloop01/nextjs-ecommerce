@@ -9,8 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "db": "prisma generate",
-    "db:seed": "npx ts-node -O '{\"module\":\"CommonJS\"}' prisma/seed.ts",
-    "postinstall": "yarn db"
+    "db:seed": "dotenv -e .env.local -- npx ts-node -O '{\"module\":\"CommonJS\"}' prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^4.6.1",
@@ -32,6 +31,7 @@
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
     "autoprefixer": "^10.4.13",
+    "dotenv-cli": "^6.0.0",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.1",
     "postcss": "^8.4.18",
