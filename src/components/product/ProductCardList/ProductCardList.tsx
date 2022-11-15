@@ -1,17 +1,10 @@
+import type { Product } from '@prisma/client'
+
 import { FC } from 'react'
 
 import s from './ProductCardList.module.css'
 
 import ProductCard from '../ProductCard'
-
-interface Product {
-  slug?: string
-  image: string
-  name: string
-  title: string
-  price: number
-  discount: number
-}
 
 type Props = {
   products: Product[]

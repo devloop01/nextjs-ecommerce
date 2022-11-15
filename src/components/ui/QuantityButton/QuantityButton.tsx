@@ -3,7 +3,7 @@ import cn from 'clsx'
 
 import s from './QuantityButton.module.css'
 
-import { PlusIcon, MinusIcon } from '@components/icons'
+import { PlusIcon, MinusIcon } from '~/components/icons'
 
 export interface QuantityButtonProps {
   className?: string

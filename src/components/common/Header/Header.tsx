@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 import s from './Header.module.css'
 
-import { ShoppingCartIcon, UserIcon, MapPinIcon } from '@components/icons'
-import { SearchInput } from '@components/ui'
-import { UserNav } from '@components/common'
+import { MapPinIcon } from '~/components/icons'
+import { SearchInput } from '~/components/ui'
+import { UserNav } from '~/components/common'
 
 type Props = {}
 

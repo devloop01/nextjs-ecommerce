@@ -1,3 +1,5 @@
+import type { Product } from '@prisma/client'
+
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -5,9 +7,7 @@ import cn from 'clsx'
 
 import s from './ProductCard.module.css'
 
-import type { Product } from '@interfaces/product'
-
-import { QuantityButton } from '@components/ui'
+import { QuantityButton } from '~/components/ui'
 
 interface Props {
   className?: string
@@ -30,7 +30,7 @@ const ProductCard: React.FC<Props> = ({ className, product }) => {
       >
         <div className={s.imageContainer}>
           <Image
-            src={product.images[0].url}
+            src={product.defaultImage.url}
             alt={product.name}
             className={s.productImage}
             quality="85"
@@ -40,10 +40,10 @@ const ProductCard: React.FC<Props> = ({ className, product }) => {
         </div>
         <div className={s.detailsContainer}>
           <div className={s.details}>
-            <span className={s.name}>{product.name}</span>
+            <span className={s.name}>{product?.name}</span>
             <div className="flex justify-between">
               <span className={s.units}>10 units</span>
-              <span className={s.price}>Rs. {product.price.value}</span>
+              <span className={s.price}>Rs. {product?.price?.value}</span>
             </div>
           </div>
         </div>

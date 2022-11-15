@@ -3,7 +3,7 @@ import cn from 'clsx'
 
 import s from './UserNav.module.css'
 
-import { ShoppingCartIcon, UserIcon, MapPinIcon } from '@components/icons'
+import { ShoppingCartIcon, UserIcon, MapPinIcon } from '~/components/icons'
 
 type Props = { className?: string }
 

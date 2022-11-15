@@ -3,7 +3,7 @@ import cn from 'clsx'
 
 import s from './SearchInput.module.css'
 
-import { SearchIcon } from '@components/icons'
+import { SearchIcon } from '~/components/icons'
 
 type Props = {
   className?: string
