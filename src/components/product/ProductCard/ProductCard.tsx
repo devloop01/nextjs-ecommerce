@@ -24,7 +24,7 @@ const ProductCard: React.FC<Props> = ({ className, product }) => {
   return (
     <div className={cn(s.root, className)}>
       <Link
-        href={product.slug ?? '/'}
+        href={`/products/${product.id}`}
         aria-label={product.name}
         className={s.link}
       >
@@ -48,8 +48,8 @@ const ProductCard: React.FC<Props> = ({ className, product }) => {
           </div>
         </div>
       </Link>
-      <div className={s.actionsContainer}>
-        <div className={s.actions}>
+      <div className={s.actions}>
+        <div className={s.actionsContainer}>
           <QuantityButton
             className="w-full"
             quantity={quantity}

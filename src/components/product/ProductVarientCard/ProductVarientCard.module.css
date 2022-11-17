@@ -1,0 +1,19 @@
+.root {
+  @apply rounded shadow-sm;
+}
+
+.rootContainer {
+  @apply flex cursor-pointer items-center justify-center gap-3 rounded-t-lg border bg-white px-4 py-2;
+}
+
+.offer {
+  @apply rounded-bl-lg rounded-br-lg border border-t-0 border-green-300 bg-green-50 p-1 text-center text-xs font-bold lowercase text-green-500;
+}
+
+.radio {
+  @apply flex h-4 w-4 items-center justify-center rounded-full border border-green-600;
+}
+
+.radioInner {
+  @apply h-3 w-3 rounded-full border bg-green-600;
+}

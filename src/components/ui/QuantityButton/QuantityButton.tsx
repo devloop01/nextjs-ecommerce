@@ -22,16 +22,16 @@ const QuantityButton: FC<QuantityButtonProps> = (props) => {
     <>
       {quantity > 0 ? (
         <div className={rootClassName}>
-          <button onClick={decrease}>
+          <button type="button" onClick={decrease}>
             <MinusIcon className="h-5 w-5" />
           </button>
           <span className={s.quantityText}>{quantity}</span>
-          <button onClick={increase}>
+          <button type="button" onClick={increase}>
             <PlusIcon className="h-5 w-5" />
           </button>
         </div>
       ) : (
-        <button onClick={increase} className={rootClassName}>
+        <button type="button" onClick={increase} className={rootClassName}>
           <span>Add</span>
         </button>
       )}

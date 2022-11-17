@@ -39,9 +39,9 @@
 }
 
 .actionsContainer {
-  @apply absolute left-0 bottom-2 w-full px-2;
+  @apply flex items-center;
 }
 
 .actions {
-  @apply flex items-center;
+  @apply absolute left-0 bottom-2 w-full px-2;
 }

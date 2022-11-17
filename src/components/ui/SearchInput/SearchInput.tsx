@@ -5,11 +5,11 @@ import s from './SearchInput.module.css'
 
 import { SearchIcon } from '~/components/icons'
 
-type Props = {
+type SearchInputProps = {
   className?: string
 }
 
-const SearchInput: FC<Props> = ({ className }) => {
+const SearchInput: FC<SearchInputProps> = ({ className }) => {
   return (
     <div className={cn(s.root, className)}>
       <label htmlFor="item-search" className={s.label}>
@@ -22,7 +22,7 @@ const SearchInput: FC<Props> = ({ className }) => {
         className={s.inputField}
         placeholder="Search for veggies"
       />
-      <button type="submit" className={s.btn}>
+      <button type="button" className={s.btn}>
         Search
       </button>
     </div>

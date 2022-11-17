@@ -1,5 +1,6 @@
 export { default as SearchIcon } from './Search'
 export { default as ChevronDownIcon } from './ChevronDown'
+export { default as ChevronRightIcon } from './ChevronRight'
 export { default as ShoppingCartIcon } from './ShoppingCart'
 export { default as UserIcon } from './User'
 export { default as MapPinIcon } from './MapPin'
