@@ -1,0 +1,41 @@
+.root {
+  @apply cursor-pointer;
+}
+
+.icon {
+  @apply mb-1.5 h-4 w-4;
+}
+
+.textContainer {
+  @apply flex flex-col;
+}
+
+.deliver {
+  @apply -mb-1.5 block text-sm font-normal;
+}
+
+.address {
+  @apply text-base font-medium;
+}
+
+/* variants */
+.stacked {
+  @apply flex items-end;
+}
+
+.flat {
+  @apply flex items-center py-2;
+}
+
+.flat .icon {
+  @apply mb-0 h-5 w-5;
+}
+
+.flat .textContainer {
+  @apply flex-row items-center gap-2;
+}
+
+.flat .deliver,
+.flat .address {
+  @apply m-0 text-sm font-medium;
+}

@@ -18,12 +18,6 @@ interface ProductViewProps {
 }
 
 const ProductView: React.FC<ProductViewProps> = ({ className, product }) => {
-  const [quantity, setQuantity] = useState<number>(0)
-
-  const increateQuantity = (n = 1) => {
-    setQuantity((v) => v + n)
-  }
-
   return (
     <Container>
       <div className="grid w-full grid-cols-2 bg-gray-100">
@@ -42,7 +36,8 @@ const ProductView: React.FC<ProductViewProps> = ({ className, product }) => {
           </div>
           <hr />
         </div>
-        <div className="flex w-full flex-col gap-4 bg-gray-200 text-sm font-normal text-black">
+
+        <div className="w-full bg-gray-200 text-sm font-normal text-black">
           <nav className="breadcrumb flex items-center">
             <Link href="/" className="hover:underline">
               Home
@@ -57,20 +52,15 @@ const ProductView: React.FC<ProductViewProps> = ({ className, product }) => {
             </span>
           </nav>
 
-          <span className="text-4xl">{product.name}</span>
+          <span className="mt-4 text-4xl">{product.name}</span>
 
-          <div className="flex items-start gap-3">
+          <div className="mt-4 flex items-start gap-3">
             <ProductVarientCard product={product} active />
             <ProductVarientCard product={product} />
           </div>
 
-          <div className="">
-            <QuantityButton
-              className=""
-              quantity={quantity}
-              increase={() => increateQuantity(1)}
-              decrease={() => increateQuantity(-1)}
-            />
+          <div className="mt-4">
+            <QuantityButton className="" maxQuantity={10} />
           </div>
         </div>
       </div>

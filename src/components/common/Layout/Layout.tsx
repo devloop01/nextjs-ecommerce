@@ -1,10 +1,10 @@
-import React from 'react'
+import { FC } from 'react'
 
 import { Header, Footer } from '~/components/common'
 
 import s from './Layout.module.css'
 
-const Layout: React.FC<{
+export const Layout: FC<{
   children: React.ReactNode
 }> = ({ children }) => {
   return (

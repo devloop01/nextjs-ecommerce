@@ -12,7 +12,7 @@ type Props = {
 
 const ProductCardList: FC<Props> = ({ products }) => {
   return (
-    <div className="flex flex-wrap justify-center gap-3">
+    <div className="grid grid-cols-4 gap-2">
       {products.map((product, index) => (
         <ProductCard key={index} product={product} />
       ))}

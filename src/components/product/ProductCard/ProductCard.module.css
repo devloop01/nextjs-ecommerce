@@ -1,5 +1,5 @@
 .root {
-  @apply relative block w-48 rounded-lg bg-white ring-2 ring-black ring-opacity-10 transition-shadow;
+  @apply relative block rounded-lg bg-white ring-2 ring-black ring-opacity-10 transition-shadow;
 }
 
 .root:hover {
@@ -7,35 +7,47 @@
 }
 
 .link {
-  @apply flex flex-col p-2 pb-14;
+  @apply flex flex-col p-2;
 }
 
 .imageContainer {
   @apply h-40 w-full;
 }
 
-.imageContainer .productImage {
-  @apply h-full w-full object-cover;
+.productImage {
+  @apply h-full w-full object-contain;
 }
 
 .detailsContainer {
-  @apply mt-2;
+  @apply mt-2 flex flex-col gap-2;
 }
 
-.detailsContainer .details {
+.details {
   @apply flex flex-col gap-2;
 }
 
-.details .name {
+.name {
   @apply text-xl font-medium text-black;
 }
 
-.details .units {
+.units {
   @apply text-sm font-normal text-gray-400;
 }
 
-.details .price {
-  @apply text-base font-normal text-black;
+.priceContainer {
+  @apply flex flex-col items-center text-base;
+}
+
+.price {
+  @apply font-normal text-black;
+}
+
+.price:nth-child(2) {
+  @apply text-sm font-light line-through opacity-50;
+}
+
+.offer {
+  @apply absolute left-0 top-5 rounded-r-full bg-green-500 px-4 py-0.5 text-sm font-normal uppercase text-white;
 }
 
 .actionsContainer {
@@ -43,5 +55,5 @@
 }
 
 .actions {
-  @apply absolute left-0 bottom-2 w-full px-2;
+  @apply w-full p-2 pt-0;
 }

@@ -1,15 +1,33 @@
 .root {
-  @apply flex items-center justify-around gap-8 rounded bg-green-500 px-6 py-2 font-medium uppercase text-white transition duration-150 ease-in-out;
+  @apply h-12 rounded-lg border-2 border-green-500 bg-green-500 font-medium uppercase text-white transition-colors duration-100 ease-linear;
 }
 
-.root:active {
-  @apply bg-green-600;
+.active {
 }
 
-.root:hover {
-  @apply bg-green-600;
+.disabled {
+}
+
+.root.active {
+  @apply bg-green-50 text-green-600;
+}
+
+.root.active:hover {
+  @apply bg-green-100;
+}
+
+.root.disabled {
+  @apply pointer-events-none border-none bg-gray-400;
+}
+
+.rootContainer {
+  @apply grid h-full grid-cols-1 place-items-center;
+}
+
+.root.active .rootContainer {
+  @apply grid-cols-3;
 }
 
 .quantityText {
-  @apply w-5 text-center tabular-nums;
+  @apply text-center text-lg tabular-nums;
 }

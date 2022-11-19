@@ -1,6 +1,6 @@
 {
   "name": "nextjs-ecommerce",
-  "packageManager": "yarn@3.2.4",
+  "packageManager": "yarn@3.3.0",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "db": "prisma generate",
-    "db:seed": "dotenv -e .env.local -- npx ts-node -O '{\"module\":\"CommonJS\"}' prisma/seed.ts"
+    "db:seed": "dotenv -e .env.local -- npx ts-node -O '{\"module\":\"CommonJS\"}' prisma/seed.ts",
+    "sb": "start-storybook -p 6006 --no-open",
+    "sb:build": "build-storybook"
   },
   "dependencies": {
     "@prisma/client": "^4.6.1",
@@ -28,10 +30,23 @@
     "zod": "^3.19.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-docs": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
     "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
     "autoprefixer": "^10.4.13",
+    "babel-loader": "^8.3.0",
     "dotenv-cli": "^6.0.0",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.1",
@@ -39,6 +54,8 @@
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "prisma": "^4.6.1",
+    "storybook-css-modules": "^1.0.8",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "4.8.4"
   }
 }

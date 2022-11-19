@@ -9,7 +9,7 @@ type SearchInputProps = {
   className?: string
 }
 
-const SearchInput: FC<SearchInputProps> = ({ className }) => {
+export const SearchInput: FC<SearchInputProps> = ({ className }) => {
   return (
     <div className={cn(s.root, className)}>
       <label htmlFor="item-search" className={s.label}>

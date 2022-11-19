@@ -5,3 +5,7 @@
 .list {
   @apply flex h-full items-center justify-items-end gap-4;
 }
+
+.icon {
+  @apply h-5 w-5;
+}

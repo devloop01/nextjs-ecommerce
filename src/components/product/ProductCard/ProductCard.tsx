@@ -1,6 +1,6 @@
 import type { Product } from '@prisma/client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import cn from 'clsx'
@@ -9,17 +9,29 @@ import s from './ProductCard.module.css'
 
 import { QuantityButton } from '~/components/ui'
 
-interface Props {
+export interface ProductCardProps {
   className?: string
   product: Product
 }
 
-const ProductCard: React.FC<Props> = ({ className, product }) => {
-  const [quantity, setQuantity] = useState<number>(0)
+export const ProductCard: React.FC<ProductCardProps> = ({
+  className,
+  product,
+}) => {
+  const [maxQuantity, setMaxQuantity] = useState<number>(() =>
+    Math.floor(Math.random() * 8)
+  )
+  const [innerText, setInnerText] = useState<string | null>(null)
+  const [offer, setOffer] = useState<number>(0)
+  const [units, setUnits] = useState<number>(0)
+  const [disabled, setDisabled] = useState<boolean>(false)
 
-  const increateQuantity = (n = 1) => {
-    setQuantity((v) => v + n)
-  }
+  useEffect(() => {
+    setInnerText(() => (maxQuantity === 0 ? 'Out Of Stock' : null))
+    setDisabled(() => maxQuantity === 0)
+    setOffer(() => 5 + Math.floor(Math.random() * 12))
+    setUnits(() => 1 + Math.floor(Math.random() * 5))
+  }, [])
 
   return (
     <div className={cn(s.root, className)}>
@@ -38,23 +50,33 @@ const ProductCard: React.FC<Props> = ({ className, product }) => {
             height={320}
           />
         </div>
+
         <div className={s.detailsContainer}>
-          <div className={s.details}>
-            <span className={s.name}>{product?.name}</span>
-            <div className="flex justify-between">
-              <span className={s.units}>10 units</span>
+          <span className={s.name}>{product?.name}</span>
+
+          <div className="flex justify-between">
+            <span className={s.units}>{units} kg</span>
+            <div className={s.priceContainer}>
+              <span className={s.price}>
+                Rs. {product?.price?.value - units}
+              </span>
               <span className={s.price}>Rs. {product?.price?.value}</span>
             </div>
           </div>
+
+          <div className={s.offer}>
+            <span> {offer} % off</span>
+          </div>
         </div>
       </Link>
+
       <div className={s.actions}>
         <div className={s.actionsContainer}>
           <QuantityButton
-            className="w-full"
-            quantity={quantity}
-            increase={() => increateQuantity(1)}
-            decrease={() => increateQuantity(-1)}
+            width="w-full"
+            maxQuantity={maxQuantity}
+            innerText={innerText}
+            disabled={disabled}
           />
         </div>
       </div>
