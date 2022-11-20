@@ -1,6 +1,20 @@
 .root {
-  @apply h-12 rounded-lg border-2 border-green-500 bg-green-500 font-medium uppercase text-white transition-colors duration-100 ease-linear;
+  @apply h-12 rounded border-2 border-green-500 bg-green-500 font-medium uppercase text-white transition-colors duration-100 ease-linear;
 }
+
+.rootContainer {
+  @apply grid h-full grid-cols-1 place-items-center;
+}
+
+.root.active .rootContainer {
+  @apply grid-cols-3;
+}
+
+.quantityText {
+  @apply text-center text-lg tabular-nums;
+}
+
+/* variants */
 
 .active {
 }
@@ -17,17 +31,5 @@
 }
 
 .root.disabled {
-  @apply pointer-events-none border-none bg-gray-400;
-}
-
-.rootContainer {
-  @apply grid h-full grid-cols-1 place-items-center;
-}
-
-.root.active .rootContainer {
-  @apply grid-cols-3;
-}
-
-.quantityText {
-  @apply text-center text-lg tabular-nums;
+  @apply cursor-not-allowed border-none bg-gray-400;
 }

@@ -15,9 +15,7 @@ const ProductsPage: NextPage = () => {
       {products.error && (
         <h2 style={{ color: 'red' }}>{products.error.message}</h2>
       )}
-      {products.data && (
-        <ProductCardList products={Array(10).fill(products.data).flat()} />
-      )}
+      {products.data && <ProductCardList products={products.data} />}
     </Container>
   )
 }

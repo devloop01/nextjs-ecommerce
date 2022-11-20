@@ -17,13 +17,31 @@ type Image {
   alt String?
 }
 
+type ProductCategory {
+  name        String
+  description String
+}
+
+type ProductDiscount {
+  name            String?
+  description     String?
+  discountPercent Float
+  active          Boolean
+}
+
 model Product {
-  id           String       @id @default(auto()) @map("_id") @db.ObjectId
+  id           String          @id @default(auto()) @map("_id") @db.ObjectId
   name         String
+  description  String
+  // sku          String?
+  category     ProductCategory
+  discount     ProductDiscount
   price        ProductPrice
   defaultImage Image
   images       Image[]
   slug         String
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
 
   @@map("products")
 }

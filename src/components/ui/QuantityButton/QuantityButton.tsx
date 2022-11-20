@@ -12,7 +12,7 @@ export interface QuantityButtonProps {
   className?: string
   maxQuantity: number
   width?: number | string
-  innerText?: string | null
+  label?: string | null
   disabled?: boolean
   onChange?: (quantity: number) => void
 }
@@ -21,7 +21,7 @@ const QuantityButton: FC<QuantityButtonProps> = ({
   className,
   maxQuantity,
   width = 'w-36',
-  innerText,
+  label = 'Add',
   disabled = false,
   onChange,
 }) => {
@@ -65,7 +65,7 @@ const QuantityButton: FC<QuantityButtonProps> = ({
         </div>
       ) : (
         <div className={s.rootContainer} onClick={increase}>
-          <span>{innerText ?? 'Add'}</span>
+          <span>{label}</span>
         </div>
       )}
     </button>

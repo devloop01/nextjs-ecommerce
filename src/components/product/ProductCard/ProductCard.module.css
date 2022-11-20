@@ -1,9 +1,9 @@
 .root {
-  @apply relative block rounded-lg bg-white ring-2 ring-black ring-opacity-10 transition-shadow;
+  @apply relative block border-2 border-black border-opacity-10 bg-white transition ease-linear;
 }
 
 .root:hover {
-  @apply ring-green-500 ring-opacity-75;
+  @apply border-green-500 border-opacity-75;
 }
 
 .link {

@@ -12,24 +12,22 @@ import { QuantityButton } from '~/components/ui'
 export interface ProductCardProps {
   className?: string
   product: Product
+  variant?: 'available' | 'unavailable'
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   className,
   product,
+  variant,
 }) => {
   const [maxQuantity, setMaxQuantity] = useState<number>(() =>
     Math.floor(Math.random() * 8)
   )
-  const [innerText, setInnerText] = useState<string | null>(null)
-  const [offer, setOffer] = useState<number>(0)
   const [units, setUnits] = useState<number>(0)
   const [disabled, setDisabled] = useState<boolean>(false)
 
   useEffect(() => {
-    setInnerText(() => (maxQuantity === 0 ? 'Out Of Stock' : null))
     setDisabled(() => maxQuantity === 0)
-    setOffer(() => 5 + Math.floor(Math.random() * 12))
     setUnits(() => 1 + Math.floor(Math.random() * 5))
   }, [])
 
@@ -45,7 +43,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             src={product.defaultImage.url}
             alt={product.name}
             className={s.productImage}
-            quality="85"
             width={320}
             height={320}
           />
@@ -64,9 +61,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </div>
           </div>
 
-          <div className={s.offer}>
-            <span> {offer} % off</span>
-          </div>
+          {product.discount.active && (
+            <div className={s.offer}>
+              <span> {product.discount.discountPercent} % off</span>
+            </div>
+          )}
         </div>
       </Link>
 
@@ -75,7 +74,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <QuantityButton
             width="w-full"
             maxQuantity={maxQuantity}
-            innerText={innerText}
             disabled={disabled}
           />
         </div>
