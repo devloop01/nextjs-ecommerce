@@ -27,15 +27,15 @@
 }
 
 .name {
-  @apply text-xl font-medium text-black;
+  @apply font-poppins text-lg font-normal text-black;
 }
 
 .units {
-  @apply text-sm font-normal text-gray-400;
+  @apply text-sm font-normal;
 }
 
 .priceContainer {
-  @apply flex flex-col items-center text-base;
+  @apply flex items-center gap-2 text-base;
 }
 
 .price {
@@ -43,7 +43,7 @@
 }
 
 .price:nth-child(2) {
-  @apply text-sm font-light line-through opacity-50;
+  @apply text-sm text-gray-400 line-through;
 }
 
 .offer {

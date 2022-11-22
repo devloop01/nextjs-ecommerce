@@ -18,6 +18,7 @@ type Image {
 }
 
 type ProductCategory {
+  // make this a model
   name        String
   description String
 }
@@ -27,6 +28,14 @@ type ProductDiscount {
   description     String?
   discountPercent Float
   active          Boolean
+}
+
+type ProductReview {
+  // change to model
+  rating Float
+  // userId 
+  title  String?
+  review String?
 }
 
 model Product {
@@ -39,6 +48,10 @@ model Product {
   price        ProductPrice
   defaultImage Image
   images       Image[]
+  countInStock Int //neeeds to change
+  reviews      ProductReview[]
+  totalReviews Int
+  avgRating    Float
   slug         String
   createdAt    DateTime        @default(now())
   updatedAt    DateTime        @updatedAt

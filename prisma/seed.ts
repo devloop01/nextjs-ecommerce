@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, ProductReview } from '@prisma/client'
 import { faker } from '@faker-js/faker'
 
 const prisma = new PrismaClient()
@@ -21,7 +21,6 @@ const generateProduct = () => {
     discountPercent: faker.datatype.number({ min: 5, max: 20 }),
     active: faker.datatype.boolean(),
   }
-  const slug = '/' + name.toLowerCase()
   const price = {
     value: faker.datatype.number({ min: 20, max: 80 }),
     currencyCode: 'INR',
@@ -31,6 +30,18 @@ const generateProduct = () => {
     alt: name.toLowerCase(),
   }
   const images = [defaultImage]
+  const countInStock = faker.datatype.number({ min: 0, max: 20 })
+  const reviews: ProductReview[] = [
+    { rating: 4.5, title: 'good', review: 'good product' },
+    { rating: 1, title: 'bad', review: 'bad product' },
+    { rating: 3, title: 'avg', review: 'ok product' },
+  ]
+  const totalReviews = reviews.length
+  const avgRating = reviews.reduce(
+    (t, review) => (t + review.rating) / totalReviews,
+    0
+  )
+  const slug = '/' + name.toLowerCase()
 
   const product = {
     name,
@@ -40,6 +51,10 @@ const generateProduct = () => {
     price,
     defaultImage,
     images,
+    countInStock,
+    reviews,
+    totalReviews,
+    avgRating,
     slug,
   }
 
@@ -51,22 +66,24 @@ async function seed() {
     .fill(0)
     .map(() => generateProduct())
 
+  console.log('Connecting to database... ⏳')
   await prisma.$connect()
-  console.log('Connected to database! (❤️ ω ❤️)')
-  console.log('Seeding data... ☆*: .｡. o(≧▽≦)o .｡.:*☆')
+  console.log('Connected to database! ✅')
+  console.log('Seeding data... ⏳')
 
   await prisma.product.createMany({ data: products })
-  console.log('data successfully seeded! ╰(*°▽°*)╯')
+  console.log('data seeded successfully! ✅👌')
 }
 
 seed()
   .then(async () => {
+    console.log('Disconnecting from database... ⏳')
     await prisma.$disconnect()
-    console.log('Disconnected from database! (◑﹏◐)')
+    console.log('Disconnected successfully! ✅')
   })
   .catch(async (e) => {
     console.error(e)
     await prisma.$disconnect()
-    console.log('\nSomething bad happed!! (◑﹏◐)')
+    console.log('\nSomething bad happed!! ❌❌❌')
     process.exit(1)
   })

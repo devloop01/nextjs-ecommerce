@@ -1,6 +1,6 @@
 import type { Product } from '@prisma/client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import cn from 'clsx'
@@ -20,14 +20,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   product,
   variant,
 }) => {
-  const [maxQuantity, setMaxQuantity] = useState<number>(() =>
-    Math.floor(Math.random() * 8)
-  )
   const [units, setUnits] = useState<number>(0)
   const [disabled, setDisabled] = useState<boolean>(false)
 
+  const originalPrice = useMemo<number>(() => {
+    const currentPrice = product.price.value
+    const discountAmount =
+      product.price.value * (product.discount.discountPercent / 100)
+    return currentPrice + discountAmount
+  }, [])
+
   useEffect(() => {
-    setDisabled(() => maxQuantity === 0)
+    setDisabled(() => product.countInStock === 0)
     setUnits(() => 1 + Math.floor(Math.random() * 5))
   }, [])
 
@@ -49,15 +53,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         <div className={s.detailsContainer}>
-          <span className={s.name}>{product?.name}</span>
+          <span className={s.name}>{product.name}</span>
 
           <div className="flex justify-between">
-            <span className={s.units}>{units} kg</span>
+            <span className={s.units}>Quantity: {units} kg</span>
             <div className={s.priceContainer}>
-              <span className={s.price}>
-                Rs. {product?.price?.value - units}
-              </span>
-              <span className={s.price}>Rs. {product?.price?.value}</span>
+              {product.discount.active ? (
+                <>
+                  <span className={s.price}>₹{product.price.value}</span>
+                  <span className={s.price}>₹{originalPrice}</span>
+                </>
+              ) : (
+                <span className={s.price}>₹{originalPrice}</span>
+              )}
             </div>
           </div>
 
@@ -73,7 +81,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className={s.actionsContainer}>
           <QuantityButton
             width="w-full"
-            maxQuantity={maxQuantity}
+            maxQuantity={product.countInStock}
             disabled={disabled}
           />
         </div>

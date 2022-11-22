@@ -65,10 +65,6 @@
     --accent-0: #000;
   }
 
-  * {
-    @apply font-poppins;
-  }
-
   body {
     @apply antialiased;
   }
