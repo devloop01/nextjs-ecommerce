@@ -1,70 +1,78 @@
 import { PrismaClient, ProductReview } from '@prisma/client'
-import { faker } from '@faker-js/faker'
+// import { faker } from '@faker-js/faker'
+import products from '../data/products.json'
 
 const prisma = new PrismaClient()
 
-const generateProduct = () => {
-  const name = faker.helpers.arrayElement([
-    'Apple',
-    'PineApple',
-    'Banana',
-    'Grapes',
-  ])
-  const description = 'This is ' + name
-  const category = {
-    name: 'Fruits',
-    description: 'beautiful fuits haha!',
-  }
-  const discount = {
-    name: 'Fruit Discount',
-    description: 'Discount for fruits!',
-    discountPercent: faker.datatype.number({ min: 5, max: 20 }),
-    active: faker.datatype.boolean(),
-  }
-  const price = {
-    value: faker.datatype.number({ min: 20, max: 80 }),
-    currencyCode: 'INR',
-  }
-  const defaultImage = {
-    url: '/fruits/' + name.toLowerCase() + '.jpg',
-    alt: name.toLowerCase(),
-  }
-  const images = [defaultImage]
-  const countInStock = faker.datatype.number({ min: 0, max: 20 })
-  const reviews: ProductReview[] = [
-    { rating: 4.5, title: 'good', review: 'good product' },
-    { rating: 1, title: 'bad', review: 'bad product' },
-    { rating: 3, title: 'avg', review: 'ok product' },
-  ]
-  const totalReviews = reviews.length
-  const avgRating = reviews.reduce(
-    (t, review) => (t + review.rating) / totalReviews,
-    0
-  )
-  const slug = '/' + name.toLowerCase()
+// const categories = ['vegetables', 'fruits', 'seasonal', 'exotics', 'leafs']
 
-  const product = {
-    name,
-    description,
-    category,
-    discount,
-    price,
-    defaultImage,
-    images,
-    countInStock,
-    reviews,
-    totalReviews,
-    avgRating,
-    slug,
-  }
+// const generateProduct = () => {
+//   const title = faker.helpers.arrayElement([
+//     'Apple',
+//     'PineApple',
+//     'Banana',
+//     'Grapes',
+//   ])
+//   const description = 'This is ' + title
+//   const category = "Fruits"
+//   const discount = faker.datatype.number({ min: 5, max: 20 })
+//   const pricePerUnit = {
+//     price: {
+//       value: faker.datatype.number({ min: 20, max: 80 }),
+//     },
+//     unit: "kg"
+//   }
+//   const packs = [
+//     {
+//       amount: 500,
+//       unit: 'g'
+//     },
+//     {
+//       amount: 1,
+//       unit: 'kg'
+//     }
+//   ]
+//   const defaultImage = {
+//     url: '/fruits/' + title.toLowerCase() + '.jpg',
+//     alt: title.toLowerCase(),
+//   }
+//   const images = [defaultImage]
+//   const available = faker.datatype.boolean()
+//   const reviews: ProductReview[] = [
+//     { rating: 4.5, title: 'good', review: 'good product' },
+//     { rating: 1, title: 'bad', review: 'bad product' },
+//     { rating: 3, title: 'avg', review: 'ok product' },
+//   ]
+//   const totalReviews = reviews.length
+//   const avgRating = reviews.reduce(
+//     (t, review) => (t + review.rating) / totalReviews,
+//     0
+//   )
+//   const slug = '/' + title.toLowerCase()
 
-  return product
-}
+//   const product = {
+//     title,
+//     description,
+//     category,
+//     discount,
+//     pricePerUnit,
+//     packs,
+//     defaultImage,
+//     images,
+//     available,
+//     reviews,
+//     totalReviews,
+//     avgRating,
+//     slug,
+//   }
+
+//   return product
+// }
 
 async function seed() {
-  const products = Array(20)
-    .fill(0)
-    .map(() => generateProduct())
+  // const products = Array(20)
+  // .fill(0)
+  // .map(() => generateProduct())
 
   console.log('Connecting to database... ⏳')
   await prisma.$connect()
