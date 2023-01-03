@@ -20,32 +20,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   product,
   variant,
 }) => {
-  const [units, setUnits] = useState<number>(0)
-  const [disabled, setDisabled] = useState<boolean>(false)
-
   const originalPrice = useMemo<number>(() => {
-    const currentPrice = product.price.value
+    const currentPrice = product.pricePerUnit.price
     const discountAmount =
-      product.price.value * (product.discount.discountPercent / 100)
+      product.pricePerUnit.price * (product.discount.value / 100)
     return currentPrice + discountAmount
-  }, [])
-
-  useEffect(() => {
-    setDisabled(() => product.countInStock === 0)
-    setUnits(() => 1 + Math.floor(Math.random() * 5))
   }, [])
 
   return (
     <div className={cn(s.root, className)}>
       <Link
         href={`/products/${product.id}`}
-        aria-label={product.name}
+        aria-label={product.title}
         className={s.link}
       >
         <div className={s.imageContainer}>
           <Image
-            src={product.defaultImage.url}
-            alt={product.name}
+            src={product.images[0].url}
+            alt={product.title}
             className={s.productImage}
             width={320}
             height={320}
@@ -53,14 +45,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         <div className={s.detailsContainer}>
-          <span className={s.name}>{product.name}</span>
+          <span className={s.name}>{product.title}</span>
 
           <div className="flex justify-between">
-            <span className={s.units}>Quantity: {units} kg</span>
+            <span className={s.units}>
+              Quantity: {product.packs[0].amount} {product.packs[0].unit}
+            </span>
             <div className={s.priceContainer}>
-              {product.discount.active ? (
+              {product.discount ? (
                 <>
-                  <span className={s.price}>₹{product.price.value}</span>
+                  <span className={s.price}>₹{product.pricePerUnit.price}</span>
                   <span className={s.price}>₹{originalPrice}</span>
                 </>
               ) : (
@@ -69,9 +63,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </div>
           </div>
 
-          {product.discount.active && (
+          {product.discount && (
             <div className={s.offer}>
-              <span> {product.discount.discountPercent} % off</span>
+              <span> {product.discount.value} % off</span>
             </div>
           )}
         </div>
@@ -81,8 +75,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className={s.actionsContainer}>
           <QuantityButton
             width="w-full"
-            maxQuantity={product.countInStock}
-            disabled={disabled}
+            maxQuantity={10}
+            disabled={!product.inStock}
           />
         </div>
       </div>

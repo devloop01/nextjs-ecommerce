@@ -16,7 +16,7 @@ export const appRouter = router({
       }
     }),
 
-  // route: /api/product.products
+  // route: /api/product
   product: productRouter,
 })
 
