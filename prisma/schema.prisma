@@ -12,7 +12,7 @@ type ProductPrice {
   currencyCode String? @default("INR")
 }
 
-type Image {
+type ProductImage {
   url String
   alt String?
 }
@@ -24,10 +24,18 @@ type ProductCategory {
 }
 
 type ProductDiscount {
-  name            String?
-  description     String?
-  discountPercent Float
-  active          Boolean
+  value  Float
+  active Boolean
+}
+
+type ProductPricePerUnit {
+  price Float
+  unit  String
+}
+
+type ProductPack {
+  amount Int
+  unit   String
 }
 
 type ProductReview {
@@ -39,22 +47,22 @@ type ProductReview {
 }
 
 model Product {
-  id           String          @id @default(auto()) @map("_id") @db.ObjectId
-  name         String
+  id           String              @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
   description  String
   // sku          String?
-  category     ProductCategory
+  category     String
   discount     ProductDiscount
-  price        ProductPrice
-  defaultImage Image
-  images       Image[]
-  countInStock Int //neeeds to change
+  pricePerUnit ProductPricePerUnit
+  packs        ProductPack[]
+  images       ProductImage[]
+  inStock      Boolean
   reviews      ProductReview[]
   totalReviews Int
   avgRating    Float
   slug         String
-  createdAt    DateTime        @default(now())
-  updatedAt    DateTime        @updatedAt
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
 
   @@map("products")
 }
