@@ -1,70 +1,292 @@
 [
   {
-    "id": "1",
-    "name": "Apple",
-    "description": "",
-    "slug": "/apple",
-    "path": "string",
-    "price": {
-      "value": 20
-    },
-    "vendor": "",
-    "title": "this is an apple",
-    "images": [
-      {
-        "url": "/product-images/Red_Apple.jpg"
-      }
-    ]
+    "title": "Onion",
+    "description": "Onions make u cry!",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 30, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/onion.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4,
+    "slug": "onion"
   },
   {
-    "id": "2",
-    "name": "Banana",
-    "description": "",
-    "slug": "/banana",
-    "path": "string",
-    "price": {
-      "value": 20
-    },
-    "vendor": "",
-    "title": "this is an apple",
-    "images": [
-      {
-        "url": "/product-images/320px-Bananas_white_background_DS.jpg"
-      }
-    ]
+    "title": "Capsicum",
+    "description": "Leaving a moderately pungent taste on the tongue, Green capsicums, also known as green peppers are bell shaped, medium-sized fruit pods. They have thick and shiny skin with a fleshy texture inside",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 66, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/green-capsicum.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4.2,
+    "slug": "capsicum"
   },
   {
-    "id": "3",
-    "name": "Grapes",
-    "description": "",
-    "slug": "/grapes",
-    "path": "string",
-    "price": {
-      "value": 20
-    },
-    "vendor": "",
-    "title": "this is an apple",
-    "images": [
-      {
-        "url": "/product-images/320px-Table_grapes_on_white.jpg"
-      }
-    ]
+    "title": "Carrot ",
+    "description": "A popular sweet-tasting root vegetable, Carrots are narrow and cone shaped.They have thick, fleshy, deeply colored root, which grows underground, and feathery green leaves that emerge above the ground.While these greens are fresh tasting and slightly bitter, the carrot roots are crunchy textured with a sweet and minty aromatic taste.Fresho brings you the flavour and richness of the finest crispy and juicy carrots that are locally grown and the best of the region",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 40, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/carrot.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 5,
+    "slug": "carrot"
   },
   {
-    "id": "4",
-    "name": "PineApple",
-    "description": "",
-    "slug": "/pineapple",
-    "path": "string",
-    "price": {
-      "value": 20
-    },
-    "vendor": "",
-    "title": "this is an apple",
-    "images": [
-      {
-        "url": "/product-images/286px-Pineapple_and_cross_section.jpg"
-      }
-    ]
+    "title": "Cauliflower",
+    "description": "Cauliflower is made up of tightly bound clusters of soft, crumbly, sweet cauliflower florets that form a dense head.Resembling a classic tree, the florets are attached to a central edible white trunk which is firm and tender.",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 40, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/cauliflower.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 3,
+    "slug": "cauliflower"
+  },
+  {
+    "title": "Coriander Leaves",
+    "description": "Coriander leaves are green, fragile with a decorative appearance. They contain minimal aroma and have a spicy sweet taste.Now do not bother wasting time cutting off the roots as we value your money and time and provide you the freshest leafy edible parts .",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 50, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/coriander-leaf.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 3.6,
+    "slug": "coriander-leaves"
+  },
+
+  {
+    "title": "Potato",
+    "description": "New Potatoes: If you are looking for soft, slightly sweet but creamy-textured potatoes. These are a special variant early harvest of potatoes (not to be confused with our regular Fresho Potato) and are easily distinguishable with their thin/ tender skin which makes them easy-to-peel off even it can be used without peeling. These freshly picked potatoes are a great choice for roasting or boiling. They give essential nutrients to your body along with high dietary fibre and carbohydrates. Combined with great taste and nutrients this vegetable is the most popular and loved amongst households.",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 42, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/potato.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4,
+    "slug": "potato"
+  },
+  {
+    "title": " Tomato",
+    "description": " Local tomatoes are partly sour and partly sweet and contain many seeds inside which are edible. The red colour present in tomatoes is due to lycopene, an anti-oxidant.",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 18, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/tomato.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4,
+    "slug": "tomato"
+  },
+  {
+    "title": "Ladies Fingers ",
+    "description": "Ladies' finger is a green vegetable with a tip at the end and a lighter green head, which is inedible and to be thrown away.It tastes mild and slightly grassy.Ladies' finger or okra is a popular vegetable that is nutritious and has a high fibre content. It contains both soluble as well as insoluble fibres and is used in various recipes. The best way to select ladies' finger is to look for smaller pods as they are tender. These also taste better. The brighter coloured ones and those that are unblemished, and firm are the best quality lady's finger. The ladies' fingers are sourced directly from the farmers and brought to the shelves carefully, ensuring that the vegetable maintains its freshness and nutrients.",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 38, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/bhendi.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4.5,
+    "slug": "ladies-fingers"
+  },
+  {
+    "title": "Cucumber",
+    "description": "Cucumbers are a refreshing, nutritious and incredibly versatile addition to any diet. Cucumbers are high in water content and have a mild and refreshing taste. They offer crispiness, refreshing flavour, and a wonderful texture to salads. You can either slice the Cucumber or spiralize it to make it interesting!",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 78, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/cucumber.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4.1,
+    "slug": "cucumber"
+  },
+  {
+    "title": "Lauki (Bottle Gourd)",
+    "description": "The bottle gourd is a vegetable native to India and is cultivated in other Asian countries. Due to its ability to grow almost anywhere, it is an important food source. Bottle Gourd is used in the preparation of various curries in Indian cuisine. The bottle gourds are chopped into pieces and added in curries to savour along with hot rice or rotis.",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 69, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/lauki-bottle-gourd-.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 3.5,
+    "slug": "lauki"
+  },
+  {
+    "title": "Green Chilli",
+    "description": "Add a dash of spice to your food with the much loved Green Chillies. Green Chillies add a tanginess to the dish, which you cannot get from any other vegetable. They can be used in a variety of dishes like curries, breads, meat dishes, and stir fries. Tempering or tadka used in a variety of Indian dishes is incomplete without green chillies",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 32, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/green-chilli.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 2.5,
+    "slug": "green-chilli"
+  },
+  {
+    "title": "Indian Garlic",
+    "description": "Garlic has a distinctive flavor that can be strong when raw, and sharp or bitter when burnt. Raw garlic flavour diminishes as garlic is cooked thoroughly. It is used to flavor many foods, such as salad dressings, vinaigrettes, marinades, sauces, vegetables, meats, soups, and stews.",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 25, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/indian-garlic.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 5,
+    "slug": "indian-garlic"
+  },
+  {
+    "title": "Beetroot",
+    "description": "Beets are versatile and nutritious root vegetables with vibrant colours. Whether you're looking to add colour to your plate or boost your daily nutritional intake, the deep hues of beets are sure to please your eye and pallet. Whether served as a pickled appetizer, as part of a healthy salad, roasted with other vegetables as a side dish, or as part of a juice cleanse - the possibilities for incorporating Beets into your diet are endless. Add some chopped beets to your next salad or juice cleanse, and you'll wonder why you haven't done it sooner.",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 45, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/beetroot.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4,
+    "slug": "beetroot"
+  },
+  {
+    "title": "Brinjal",
+    "description": "Brinjal is a terrific vegetable to bring into your weekly cooking rotation. The bold flavour of Brinjal makes it a great choice for main dishes, side dishes, salads and even desserts. When grilled, Brinjal has a firm, satisfying texture, making it a popular substitute for meat in vegetarian dishes. Cut it up raw and toss it into every day stir-fries or stick it under the broiler with other vegetables to roast or grill.",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 38, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/brinjal.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4,
+    "slug": "brinjal"
+  },
+  {
+    "title": "Cowpea Beans",
+    "description": "Cowpeas are a multipurpose legume with a great nutritional profile. Use these in soups and stews, in place of lentils, in rice dishes, in salads and dips, or as a healthy alternative to meat for a vegetable curry. ",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 48, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/cowpea-beans.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4,
+    "slug": "cowpea-beans"
+  },
+  {
+    "title": "Red Cabbage",
+    "description": "Seasoned by nature with a mild, slightly sweet flavour, Red Cabbage used in a wide variety of dishes around the world. Raw Red Cabbage has a crisp texture and slightly peppery taste. When poached, roasted, or steamed, the vegetable becomes tender while retaining its crispness and vibrant colour. Red Cabbage pairs nicely with apples, cucumbers, onions and sweet bell peppers in salads.",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 99, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/red-cabbage.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4,
+    "slug": "red-cabbage"
+  },
+  {
+    "title": "Indian Avocado",
+    "description": "Sometimes you can't get enough of Avocado's buttery flavour. Avocados are delicious and healthy! The mild flavour and creamy texture of avocados make it a versatile addition to lunch or dinner. Whether you are looking to make a healthy treat, or are looking for an easy way to make your sandwiches taste better, avocado is the answer. ",
+    "category": "vegetable",
+    "discount": { "value": 8, "active": true },
+    "pricePerUnit": { "price": 179, "unit": "kg" },
+    "packs": [
+      { "amount": 500, "unit": "g" },
+      { "amount": 1, "unit": "kg" }
+    ],
+    "images": [{ "url": "/products/vegetables/avocado.jpg" }],
+    "inStock": true,
+    "reviews": [],
+    "totalReviews": 0,
+    "avgRating": 4,
+    "slug": "indian-avocado"
   }
 ]
