@@ -1,6 +1,5 @@
 {
   "name": "nextjs-ecommerce",
-  "packageManager": "yarn@3.3.0",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "db": "prisma generate",
-    "db:push": "npx prisma db push",
-    "db:seed": "dotenv -e .env.local -- npx ts-node -O '{\"module\":\"CommonJS\"}' prisma/seed.ts",
+    "db:push": "dotenv -e .env.local -- npx prisma db push",
+    "db:seed": "dotenv -e .env.local -- npx ts-node prisma/seed.ts",
+    "db:clean": "dotenv -e .env.local -- npx ts-node prisma/clean.ts",
     "sb": "start-storybook -p 6006 --no-open",
     "sb:build": "build-storybook"
   },
@@ -22,9 +22,11 @@
     "@trpc/react-query": "^10.0.0-rc.8",
     "@trpc/server": "^10.0.0-rc.8",
     "clsx": "^1.2.1",
+    "convert": "^4.9.0",
     "next": "13.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.39.5",
     "react-merge-refs": "^2.0.1",
     "superjson": "^1.11.0",
     "tailwindcss": "^3.2.1",
