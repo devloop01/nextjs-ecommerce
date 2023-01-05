@@ -1,17 +1,6 @@
 .root {
-  @apply inline-flex max-h-10 cursor-pointer items-center
-    justify-center border border-transparent bg-white px-10 py-5
-    text-center text-sm font-semibold
-    leading-6 tracking-wide text-black shadow-sm transition
-    duration-150 ease-linear;
-}
-
-.root:hover {
-  @apply bg-green-100;
-}
-
-.root:focus {
-  @apply outline-none;
+  @apply flex items-center justify-center rounded-md px-4 py-2 font-medium 
+  focus:outline-none focus:ring-2;
 }
 
 .root[data-active] {
@@ -22,25 +11,18 @@
   @apply cursor-not-allowed bg-gray-400;
 }
 
-.slim {
-  @apply transform-none py-2 normal-case;
+.primary {
+  @apply bg-green-500 text-white hover:bg-green-600 focus:ring-green-500;
 }
 
-.ghost {
-  @apply border bg-gray-600 text-sm;
+.secondary {
 }
 
-.ghost:hover {
-  @apply bg-white text-black;
+.danger {
 }
 
 .naked {
-  @apply border-none bg-transparent py-0 px-0 font-semibold shadow-none outline-none;
-}
-
-.naked:hover,
-.naked:focus {
-  @apply border-none bg-transparent;
+  @apply bg-none text-black;
 }
 
 .disabled,

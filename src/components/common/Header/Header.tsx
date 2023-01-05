@@ -26,7 +26,7 @@ export const Header: FC<HeaderProps> = ({}) => {
             <SearchInput />
           </div>
 
-          <UserNav className="ml-12" />
+          <UserNav userName="" />
         </div>
 
         <div className="block grow px-4 pb-4 md:hidden">

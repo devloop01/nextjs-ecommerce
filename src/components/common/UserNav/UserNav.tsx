@@ -17,18 +17,17 @@ export const UserNav: FC<UserNavProps> = ({ className, userName }) => {
       <ul className={s.list}>
         {userName ? (
           <li>
-            <button type="button" className="flex items-center gap-2 p-2">
+            <Button type="button" variant="naked">
               <UserIcon className={s.icon} />
-              <span className="hidden text-sm font-semibold">Log In</span>
-            </button>
+            </Button>
           </li>
         ) : (
           <Button>Login</Button>
         )}
         <li>
-          <button type="button" className="p-2">
+          <Button type="button" variant="naked">
             <ShoppingCartIcon className={s.icon} />
-          </button>
+          </Button>
         </li>
       </ul>
     </nav>

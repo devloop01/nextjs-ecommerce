@@ -7,9 +7,6 @@ import { trpc } from '~/utils/trpc'
 import { Layout } from '~/components/common'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
-
-
-
   return (
     <Layout>
       <Component {...pageProps} />

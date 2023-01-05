@@ -1,46 +1,43 @@
 import cn from 'clsx'
-import React, {
-  forwardRef,
-  ButtonHTMLAttributes,
-  JSXElementConstructor,
-  useRef,
-} from 'react'
+import { cva } from 'class-variance-authority'
+import React, { forwardRef, ButtonHTMLAttributes, useRef } from 'react'
 import { mergeRefs } from 'react-merge-refs'
+
 import s from './Button.module.css'
+
 import { LoadingDots } from '~/components/ui'
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  href?: string
+export type ButtonProps = {
   className?: string
-  variant?: 'flat' | 'slim' | 'ghost' | 'naked'
+  variant?: 'primary' | 'secondary' | 'danger' | 'naked'
   active?: boolean
   type?: 'submit' | 'reset' | 'button'
-  Component?: string | JSXElementConstructor<any>
-  width?: string | number
+  fullWidth?: boolean
   loading?: boolean
   disabled?: boolean
-}
+} & ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
   const {
     className,
-    variant = 'flat',
+    variant = 'primary',
     children,
     active,
-    width,
+    fullWidth = false,
     loading = false,
     disabled = false,
     style = {},
-    Component = 'button',
     ...rest
   } = props
-  const ref = useRef<typeof Component>(null)
+  const ref = useRef<any>(null)
 
   const rootClassName = cn(
     s.root,
+    fullWidth && 'w-full',
     {
-      [s.ghost]: variant === 'ghost',
-      [s.slim]: variant === 'slim',
+      [s.primary]: variant === 'primary',
+      [s.secondary]: variant === 'secondary',
+      [s.danger]: variant === 'danger',
       [s.naked]: variant === 'naked',
       [s.loading]: loading,
       [s.disabled]: disabled,
@@ -49,16 +46,12 @@ export const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
   )
 
   return (
-    <Component
+    <button
       aria-pressed={active}
       data-variant={variant}
       ref={mergeRefs([ref, buttonRef])}
       className={rootClassName}
       disabled={disabled}
-      style={{
-        width,
-        ...style,
-      }}
       {...rest}
     >
       {children}
@@ -67,7 +60,7 @@ export const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
           <LoadingDots />
         </i>
       )}
-    </Component>
+    </button>
   )
 })
 
