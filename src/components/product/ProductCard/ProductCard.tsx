@@ -7,7 +7,8 @@ import cn from 'clsx'
 
 import s from './ProductCard.module.css'
 
-import { QuantityButton } from '~/components/ui'
+import { StarIcon } from '~/components/icons'
+import { Button, QuantityButton } from '~/components/ui'
 
 export interface ProductCardProps {
   className?: string
@@ -47,12 +48,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className={s.detailsContainer}>
           <span className={s.name}>{product.title}</span>
 
-          <div className="flex justify-between">
+          <div className="flex items-center">
+            <div className={s.ratings}>
+              <span>4</span>
+              <StarIcon className="h-3 w-3 fill-white stroke-white" />
+            </div>
+            <span className="px-2 font-semibold text-gray-500">(10)</span>
+          </div>
+
+          <div className="flex-col">
             <span className={s.units}>
-              Quantity: {product.packs[0].amount} {product.packs[0].unit}
+              Quantity: {product.packs[0].amount}
+              {product.packs[0].unit}
             </span>
             <div className={s.priceContainer}>
-              {product.discount ? (
+              {product.discount.active ? (
                 <>
                   <span className={s.price}>₹{product.pricePerUnit.price}</span>
                   <span className={s.price}>₹{originalPrice}</span>
@@ -60,24 +70,25 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               ) : (
                 <span className={s.price}>₹{originalPrice}</span>
               )}
+              {product.discount.active && (
+                <div className={s.offer}>
+                  <span>{product.discount.value} % off</span>
+                </div>
+              )}
             </div>
           </div>
-
-          {product.discount && (
-            <div className={s.offer}>
-              <span> {product.discount.value} % off</span>
-            </div>
-          )}
         </div>
       </Link>
 
       <div className={s.actions}>
         <div className={s.actionsContainer}>
-          <QuantityButton
-            width="w-full"
-            maxQuantity={10}
-            disabled={!product.inStock}
-          />
+          <Button
+            fullWidth={true}
+            // maxQuantity={10}
+            // disabled={!product.inStock}
+          >
+            Add To Cart
+          </Button>
         </div>
       </div>
     </div>

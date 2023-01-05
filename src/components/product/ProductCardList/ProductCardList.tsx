@@ -12,12 +12,7 @@ type Props = {
 
 const ProductCardList: FC<Props> = ({ products }) => {
   return (
-
-
-
-
-
-    <div className='grid grid-cols-4 gap-1'>
+    <div className="grid grid-cols-4">
       {products.map((product, index) => (
         <ProductCard key={index} product={product} />
       ))}

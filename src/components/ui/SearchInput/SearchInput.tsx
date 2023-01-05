@@ -4,6 +4,7 @@ import cn from 'clsx'
 import s from './SearchInput.module.css'
 
 import { SearchIcon } from '~/components/icons'
+import { Button } from '~/components/ui'
 
 type SearchInputProps = {
   className?: string
@@ -20,11 +21,11 @@ export const SearchInput: FC<SearchInputProps> = ({ className }) => {
         type="search"
         id="item-search"
         className={s.inputField}
-        placeholder="Search for veggies"
+        placeholder="Search for veggies & fruits"
       />
-      <button type="button" className={s.btn}>
+      <Button type="button" className="!rounded-l-none">
         Search
-      </button>
+      </Button>
     </div>
   )
 }

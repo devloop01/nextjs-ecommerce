@@ -8,11 +8,8 @@ export default {
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>{args.children}</Button>
+  <Button {...args}>Login</Button>
 )
 
 export const Primary = Template.bind({})
-
-Primary.args = {
-  children: 'Button',
-}
+Primary.args = {}

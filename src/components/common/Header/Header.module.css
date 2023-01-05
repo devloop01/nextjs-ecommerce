@@ -1,5 +1,5 @@
 .root {
-  @apply sticky top-0 z-50 bg-white shadow-md;
+  @apply sticky top-0 z-50 border-b-2 bg-white;
 }
 
 .rootContainer {
