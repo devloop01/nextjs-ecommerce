@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import cn from 'clsx'
+import { signIn } from 'next-auth/react'
 
 import s from './UserNav.module.css'
 
@@ -22,7 +23,7 @@ export const UserNav: FC<UserNavProps> = ({ className, userName }) => {
             </Button>
           </li>
         ) : (
-          <Button>Login</Button>
+          <Button onClick={() => signIn()}>Login</Button>
         )}
         <li>
           <Button type="button" variant="naked">
