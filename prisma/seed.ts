@@ -77,8 +77,12 @@ async function seed() {
   console.log('Connecting to database... ⏳')
   await prisma.$connect()
   console.log('Connected to database! ✅')
-  console.log('Seeding data... ⏳')
 
+  console.log('Cleaning database...')
+  await prisma.product.deleteMany()
+  console.log('Database clean complete!')
+
+  console.log('Seeding data... ⏳')
   await prisma.product.createMany({ data: products })
   console.log('data seeded successfully! ✅👌')
 }
